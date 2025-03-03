@@ -5,15 +5,15 @@ using UnityEngine;
 public class FallTrigger : MonoBehaviour
 {
 
-    public UnityEvent OnPinFall = new();
-    public bool isPinFallen = false;
+    public UnityEvent OnStarGot = new();
+    public bool isStarGot = false;
     private void OnTriggerEnter(Collider triggeredObject)
     {
-        if (triggeredObject.CompareTag("Ground") && !isPinFallen)
+        if (triggeredObject.CompareTag("Player") && !isStarGot)
         {
-            isPinFallen = true;
-            OnPinFall?.Invoke();
-            Debug.Log($"{gameObject.name} is fallen");
+            isStarGot = true;
+            OnStarGot?.Invoke();
+            Debug.Log($"{gameObject.name} is got!");
         }
     }
 }

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
                                                         FindObjectsSortMode.None);
         foreach (FallTrigger pin in fallTriggers)
         {
-            pin.OnPinFall.AddListener(IncrementScore);
+            pin.OnStarGot.AddListener(IncrementScore);
         }
     }
     private void IncrementScore()
