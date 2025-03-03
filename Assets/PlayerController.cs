@@ -4,19 +4,22 @@ public class Player : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private float speed;
     [SerializeField] private float jumpforce;
+    [SerializeField] private float Dforce;
 
     private Rigidbody rb;
    
 
     [SerializeField] private float Hopped = 0;
+    [SerializeField] private float Dashed = 0;
     private void Start()
     {
         inputManager.OnMove.AddListener(MovePlayer);
         inputManager.OnSpacePressed.AddListener(Hop);
-        //inputManager.OnShiftPressed.AddListener(Launch);
+        inputManager.OnShiftPressed.AddListener(Launch);
 
         rb = GetComponent<Rigidbody>();
         Hopped = 0;
+        Dashed = 0;
     }
     private void MovePlayer(Vector2 direction)
     {
@@ -32,6 +35,7 @@ public class Player : MonoBehaviour
         if (triggeredObject.CompareTag("Ground"))
         {
             Hopped = 0;
+            Dashed = 0;
             Debug.Log($"We hit ground");
         }
     }
@@ -47,14 +51,12 @@ public class Player : MonoBehaviour
 
         
     }
-    /*
+   
     private void Launch()
     {
-        transform.parent = null;
-
-        rb.AddForce(launchIndicator.forward * force, ForceMode.Impulse);
-        launchIndicator.gameObject.SetActive(false);
-
+        if (Dashed > 0) return;
+        Dashed++;
+        rb.AddForce(transform.forward * Dforce, ForceMode.Impulse);
     }
-    */
+    
 }
