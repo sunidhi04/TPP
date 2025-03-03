@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         rb.AddForce(speed * moveDirection);
 
         transform.parent = null;
-        rb.AddForce(DirectionIndicator.forward * force);
+        rb.AddForce(DirectionIndicator.forward * speed);
         DirectionIndicator.gameObject.SetActive(false);
     }
 
