@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody rb;
 
-    private bool OnGround;
     [SerializeField] private float Hopped = 0;
     private void Start()
     {
@@ -18,13 +17,11 @@ public class Player : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         Hopped = 0;
-        OnGround = true;
     }
     private void MovePlayer(Vector2 direction)
     {
         Vector3 moveDirection = new(direction.x, 0f, direction.y);
         rb.AddForce(speed * moveDirection);
-
 
         transform.parent = null;
         rb.AddForce(DirectionIndicator.forward * force);
@@ -36,7 +33,6 @@ public class Player : MonoBehaviour
         if (triggeredObject.CompareTag("Ground"))
         {
             Hopped = 0;
-            OnGround = true;
         }
     }
     private void Hop()       
@@ -47,7 +43,7 @@ public class Player : MonoBehaviour
 
         Debug.Log($"We jumped");
         Hopped++;
-        Vector3 jumpup = new(0, 1, 0);
+        Vector3 jumpup = new(0, 1f, 0);
         rb.AddForce(jumpup *jumpforce);
 
         
