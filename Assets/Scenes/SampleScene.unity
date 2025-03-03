@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 22015714}
   m_Layer: 0
   m_Name: MapBlock (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 156303589}
   m_Layer: 0
   m_Name: MapBlock (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 276426325}
   m_Layer: 0
   m_Name: MapBlock (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 288262816}
   m_Layer: 0
   m_Name: MapBlock (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1588,8 +1588,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 423967306}
-  speed: 3
-  jumpforce: 120
+  speed: 4
+  jumpforce: 300
   Dforce: 10
   Hopped: 0
   Dashed: 0
@@ -1602,7 +1602,7 @@ Rigidbody:
   m_GameObject: {fileID: 423967301}
   serializedVersion: 4
   m_Mass: 0.5
-  m_Drag: 3
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1668,7 +1668,7 @@ GameObject:
   - component: {fileID: 556011317}
   m_Layer: 0
   m_Name: MapBlock (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1875,7 +1875,7 @@ GameObject:
   - component: {fileID: 585265630}
   m_Layer: 0
   m_Name: MapBlock (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 1277008599}
   m_Layer: 0
   m_Name: MapBlock (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2764,7 +2764,7 @@ GameObject:
   - component: {fileID: 1784437063}
   m_Layer: 0
   m_Name: MapBlock (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2872,7 +2872,7 @@ GameObject:
   - component: {fileID: 1857333708}
   m_Layer: 0
   m_Name: MapBlock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2980,7 +2980,7 @@ GameObject:
   - component: {fileID: 1869104830}
   m_Layer: 0
   m_Name: MapBlock (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
