@@ -21,9 +21,8 @@ public class Player : MonoBehaviour
     private void MovePlayer(Vector2 direction)
     {
         Vector3 moveDirection = new(direction.x, 0f, direction.y);
-        rb.AddForce(speed * moveDirection);
+        //rb.AddForce(speed * moveDirection);
 
-        transform.parent = null;
         rb.AddForce(DirectionIndicator.forward * speed);
         DirectionIndicator.gameObject.SetActive(false);
     }

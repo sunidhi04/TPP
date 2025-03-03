@@ -1,18 +1,18 @@
 using System;
 using UnityEngine.Events;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class FallTrigger : MonoBehaviour
 {
 
     public UnityEvent OnStarGot = new();
-    public bool isStarGot = false;
     private void OnTriggerEnter(Collider triggeredObject)
     {
-        if (triggeredObject.CompareTag("Player") && !isStarGot)
+        if (triggeredObject.CompareTag("Player"))
         {
-            isStarGot = true;
             OnStarGot?.Invoke();
+            Destroy(gameObject);
             Debug.Log($"{gameObject.name} is got!");
         }
     }
