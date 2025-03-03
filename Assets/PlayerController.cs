@@ -1,12 +1,12 @@
 using UnityEngine;
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform DirectionIndicator;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private float speed;
     [SerializeField] private float jumpforce;
 
     private Rigidbody rb;
+   
 
     [SerializeField] private float Hopped = 0;
     private void Start()
@@ -23,15 +23,16 @@ public class Player : MonoBehaviour
         Vector3 moveDirection = new(direction.x, 0f, direction.y);
         //rb.AddForce(speed * moveDirection);
 
-        rb.AddForce(DirectionIndicator.forward * speed);
-        DirectionIndicator.gameObject.SetActive(false);
+        rb.AddForce(transform.forward * speed);
     }
 
     private void OnTriggerEnter(Collider triggeredObject)
     {
+        Debug.Log($"We hit something");
         if (triggeredObject.CompareTag("Ground"))
         {
             Hopped = 0;
+            Debug.Log($"We hit ground");
         }
     }
     private void Hop()       
@@ -42,8 +43,7 @@ public class Player : MonoBehaviour
 
         Debug.Log($"We jumped");
         Hopped++;
-        Vector3 jumpup = new(0, 1f, 0);
-        rb.AddForce(jumpup *jumpforce);
+        rb.AddForce(Vector3.up *jumpforce);
 
         
     }

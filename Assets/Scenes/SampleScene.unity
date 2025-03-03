@@ -289,6 +289,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bed8ca7e751b8d4493cd403d48241b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 43009175}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5bed8ca7e751b8d4493cd403d48241b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 43009179}
   m_SourcePrefab: {fileID: 100100000, guid: 5bed8ca7e751b8d4493cd403d48241b9, type: 3}
 --- !u!1 &43009173 stripped
 GameObject:
@@ -310,7 +313,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -328,6 +331,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a757cfb969ca14a9f1e9fd54628010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &43009179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43009173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62251beaaa29a9a4e917fef5b3197252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStarGot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &100245695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,9 +1408,11 @@ GameObject:
   - component: {fileID: 423967303}
   - component: {fileID: 423967305}
   - component: {fileID: 423967304}
+  - component: {fileID: 423967306}
+  - component: {fileID: 423967307}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,10 +1468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a7bcf5e20adba48a906da6dd54c912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DirectionIndicator: {fileID: 0}
-  inputManager: {fileID: 0}
-  speed: 0
-  jumpforce: 0
+  inputManager: {fileID: 423967306}
+  speed: 5
+  jumpforce: 100
   Hopped: 0
 --- !u!54 &423967305
 Rigidbody:
@@ -1461,7 +1480,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423967301}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1480,6 +1499,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &423967306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423967301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820cbcc146d073c4d99ff94c52d7fefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSpacePressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShiftPressed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &423967307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423967301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a7002c935e5ad489876fb36c5e4a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeLookCamera: {fileID: 300335308}
 --- !u!1 &556011316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1859,6 @@ GameObject:
   - component: {fileID: 807189181}
   - component: {fileID: 807189180}
   - component: {fileID: 807189179}
-  - component: {fileID: 807189182}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -1883,19 +1935,6 @@ Transform:
   - {fileID: 835891839}
   m_Father: {fileID: 423967302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &807189182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807189176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53a7002c935e5ad489876fb36c5e4a7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  freeLookCamera: {fileID: 300335308}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,7 +2967,7 @@ GameObject:
   - component: {fileID: 1916880857}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

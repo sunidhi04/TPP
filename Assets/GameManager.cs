@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         foreach (FallTrigger pin in fallTriggers)
         {
             pin.OnStarGot.AddListener(IncrementScore);
+            Debug.Log($"{gameObject.name} has been heard");
         }
     }
     private void IncrementScore()
